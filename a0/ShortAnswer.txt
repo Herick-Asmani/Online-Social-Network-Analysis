@@ -1,0 +1,73 @@
+Enter your responses inline below and push this file to your private GitHub
+repository.
+
+
+1. Assume I plan to use the friend_overlap function above to quantify the
+similarity of two users. E.g., because 238 is larger than 1, I conclude that
+Jill Stein and Gary Johnson are more similar than Hillary Clinton and Donald
+Trump.
+
+How is this approach misleading? How might you fix it?
+
+This approach is misleading as the users have different numbers of friends and
+so it can't be compared in terms of similarity. If all the users had similar number
+of friends then there might be a way to compute their similarity. 
+
+
+
+
+
+
+
+
+2. Looking at the output of your followed_by_hillary_and_donald function, why
+do you think this user is followed by both Hilary Clinton and Donald Trump,
+who are rivals? Do some web searches to see if you can find out more
+information.
+The White House is the official residence and workplace of the President of 
+the United States. As both of them were standing for US Presidency elections
+so it is quite obvious they would follow Whitehouse twitter account even though
+they are rivals. 
+
+
+
+
+
+
+
+
+
+
+
+
+3. There is a big difference in how many accounts each candidate follows (Gary
+Johnson follows over 3K accounts, while Donald Trump follows less than
+50). Why do you think this is? How might that affect our analysis?
+
+If we look at Donald Trump's Following list, he mostly follows the accounts of 
+the users which are close to him whereas Gary Johnson being from the minor party 
+follows over 3k accounts mainly for networking in order to gain the popularity.
+
+This will make our graph analysis denser towards Gary Johnson side and sparser 
+towards Trump's side. 
+
+
+
+
+
+
+
+4. The follower graph we've collected is incomplete. To expand it, we would
+have to also collect the list of accounts followed by each of the
+friends. That is, for each user X that Donald Trump follows, we would have to
+also collect all the users that X follows. Assuming we again use the API call
+https://dev.twitter.com/rest/reference/get/friends/ids, how many requests will
+we have to make? Given how Twitter does rate limiting
+(https://dev.twitter.com/rest/public/rate-limiting), approximately how many
+minutes will it take to collect this data?
+
+The 4 candidates('DrJillStein', 'GovGaryJohnson', 'HillaryClinton', 'realDonaldTrump')
+need 4 api calls. They have 1649, 3488, 769 and 45 friends respectively.
+Therefore, 4 + 1649 + 3488 + 769 + 45 = 5955 api calls. Twitter rate limit is 15 requests
+for every 15 min window. Therefore, It will take approximately 5955 mins to complete the entire API request.
+
